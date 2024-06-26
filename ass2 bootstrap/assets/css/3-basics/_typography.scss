@@ -1,0 +1,62 @@
+
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
+
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sono:wght@200..800&display=swap';
+
+
+body {
+    font-size: 100%;
+    font-family:'Open Sans';
+    h1, p {
+        margin: 0;
+    }
+  }
+
+#h1Title {
+    h1 {
+        font-weight: 600;
+        text-transform:uppercase;
+        color: white;
+        // font-size: 2.6em;
+    }
+}
+// h1 {
+//     font-family: "Sono";
+//     // font-size: 2.6em;
+//     color: $textBlue;
+//     text-transform: capitalize;
+//     letter-spacing: -0.03em;
+// }
+// h2 {
+//     font-family:"Sono";
+//     font-size: 1.6em;
+//     text-transform:uppercase;
+//     letter-spacing: -0.02em;
+//     font-weight: 300;
+// }
+// h3 {
+//     font-family:"Open sans";
+//     font-size: 1em;
+//     text-transform:uppercase;
+//     color: $textBlue;
+//     font-weight: 700;
+// }
+// p,form,input {
+//     font-family: 'Open sans';
+// }
+
+// #loginBlock p {
+//     text-align: center;
+//     font-size: 0.875em;
+// }
+// p {
+//     color: $textBlue;
+// }
+
+// p.bold {
+//     font-weight: bold;
+// }
+
+// #welcomeText {
+//     text-align: center;
+// }

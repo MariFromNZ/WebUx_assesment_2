@@ -1,0 +1,54 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/IMG_20240511_150411.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    height: 128px;
+    background-color:$bgMainDark;
+    padding: 0 7.2%;
+    img {
+        height: 80px;
+        padding-top: 24px;
+    }
+    margin-bottom: 154px;
+}
+.content {
+    @include width85center;
+}
+#h1Title {
+    width: 49%;
+    background-image: url(../img/h1bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;//change to fixed  for different screens later
+    // padding: 60px;
+    padding: 4%;
+    margin-top: 162px;
+    // box-sizing: border-box;
+}
+#searchTransportForm {
+    width:46%;
+    height: 100%;
+    background-color: white;
+    border-radius: 6px;
+}
+.form {
+    padding: 4%;
+}
+
+// .listContainer,
+// .subtitle,
+// .cardSubtitle,
+// .cardsBlock {
+//   @include width90center;
+// }
+
+// .hidden{
+//     visibility:hidden;
+//   }

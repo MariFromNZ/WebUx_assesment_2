@@ -1,0 +1,54 @@
+// //bottom navbar
+// .navbar {
+//   margin: 0 auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: last baseline; //inline items in nav horizontaly
+//   height: 83px;
+//   overflow: hidden;
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   box-shadow: 0 -3pt 7pt rgba(63, 81, 181, 0.12);
+//   background-color: white;
+//   img {
+//     display: block;
+//     margin: 0 auto 5px;
+//   }
+//   #cameras img {
+//     padding-bottom: 3px; //align camera icon for better visual presentation
+//   }
+// }
+
+// //fix navbar overlapping 
+// body {
+//   margin-bottom:83px;
+// }
+
+// //align icon and text vertically at bottom nav
+// .navIcon {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// //top nav (go back, logo, go out)
+// .topNav {
+//   height: 69px;
+//   width: 90%;
+//   margin: 0 auto 0;
+//   padding: 0 22px;
+//   box-sizing: border-box;
+//   display: flex;
+//   .goOut,
+//   .goBack {
+//     width: 25px;
+//   }
+//   .logo {
+//     flex-grow: 1;
+//     img {
+//       display: block;
+//       margin: 0 auto 5px;
+//     }
+//   }
+// }

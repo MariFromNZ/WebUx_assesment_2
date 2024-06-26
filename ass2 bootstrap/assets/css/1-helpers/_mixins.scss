@@ -1,0 +1,33 @@
+
+@mixin width85center{
+    width: 85%;
+    margin: 0 auto;
+}
+
+// @mixin input {
+//     height: 56px;
+//     width: 100%;
+//     padding: 14px 20px;
+//     text-transform: uppercase;
+//     font-weight: 600;
+//     border-radius: 6px;
+//     cursor: pointer;
+//   }
+
+// @mixin fullSize {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     margin:0;
+// }
+
+// @mixin width90center{
+//     width: 90%;
+//     margin: 0 auto;
+// }
+
+// @mixin listElementLabelText{
+//     line-height: 78px;
+//     margin: 0;
+//     text-transform: capitalize;
+// }

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>home/kainga</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.ico" /> -->
+</head>
+
+<body>
+  <header>
+    <div id="logo">
+      <a href="home.html">
+        <img src="/assets/img/LogoBig.png" alt="logo tourism new zeland" />
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="content">
+      <div id="h1Title" class="floatLeft">
+        <h1>Find the best transport option 
+          for your trip</h1>
+      </div>
+      <div class="form floatRight" id="searchTransportForm">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="pickUpLocation">Pick up location</label>
+              <select id="pickUpLocation" class="form-control">
+                <option selected>Select pick up location</option>
+                <option value="">location 1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label" for="pickUpDate">Pick up date</label>
+              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="pickUpTime">Pick up time</label>
+              <input type="text" class="form-control" id="pickUpTime" placeholder="8:00">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="dropOffLocation">Drop-off location</label>
+                <select id="dropOffLocation" class="form-control">
+                  <option selected>Select drop-off location</option>
+                  <option value="">location 1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label" for="dropOffDate">Drop-off date</label>
+              <input class="form-control" id="dropOffDate" name="date" placeholder="MM/DD/YYY" type="text"/>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="dropOffTime">Drop-off time</label>
+              <input type="text" class="form-control" id="dropOffTime" placeholder="8:00">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="transportCapacity">Transport capacity</label>
+              <select id="transportCapacity" class="form-control">
+                <option selected>Any capacity</option>
+                <option value="">1 person</option>
+                <option value="">2 people</option>
+                <option value="">3 people</option>
+                <option value="">4 people</option>
+                <option value="">5 people</option>
+                <option value="">6 people</option>
+              </select>
+            </div>
+            <div class="form-group col-md-7">
+              <label for="transportType">Transport type</label>
+              <select id="transportType" class="form-control">
+                <option selected>Any type</option>
+                <option value="">Motorbike</option>
+                <option value="">Small car</option>
+                <option value="">Large car</option>
+                <option value="">Motor home</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="driverAge">Age</label>
+              <select id="driverAge" class="form-control">
+                <option selected>21</option>
+                <option value="">22</option>
+                <option value="">23</option>
+                <option value="">24</option>
+                <option value="">25</option>
+                <option value="">26+</option>
+              </select>
+            </div>
+            <div class="form-group col-md-7">
+              <label class="control-label" for="tripDistance">Estimated distance of your trip</label>
+              <input type="text" class="form-control" id="pickUpTime" placeholder="0km">
+            </div>
+          </div>
+          <button type="submit" class="btn custom-btn" id="btnSearchTransportForm">See available transport</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+ 
+
+  <!-- <div class="main">
+    <div class="subtitle">
+      <div class="floatLeft">
+        <h3>residences</h3>
+      </div>
+      <div class="roundAddBtn floatRight" id="addAddressBtn"> -->
+
+        <!-- <a href="index.html"> -->
+        <!-- <img src="/assets/img/addButton.png" alt="button add more residences" /> -->
+        <!-- </a> -->
+
+      <!-- </div>
+    </div>
+    <div class="listContainer">
+      <a href="house1.html">
+        <div class="listElementAddress">
+          <div class="addressLabel">
+            <p>124 Worcester Street, Christchurch</p>
+          </div>
+          <img src="/assets/img/arrowWhiteRight.png" alt="arrow to house1" />
+        </div>
+      </a>
+
+      <a href="house2.html">
+        <div class="listElementAddress">
+          <div class="addressLabel">
+            <p>120 Hereford Street, Auckland</p>
+          </div>
+          <img src="/assets/img/arrowWhiteRight.png" alt="arrow to house2" />
+        </div>
+      </a>
+    </div>
+    <div class="allDevices">
+      <div class="cardSubtitle">
+        <h3>all devices</h3>
+      </div>
+      <div class="cardsBlock">
+        <a href="index.html">
+          <div class="cards">
+            <div class="cardText">
+              <p>security</p>
+            </div>
+            <div class="arrowRight">
+              <img src="/assets/img/arrowBlueRight.png" alt="arrow go to security page" />
+            </div>
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="cards">
+            <div class="cardText">
+              <p>kitchen</p>
+            </div>
+            <div class="arrowRight">
+              <img src="/assets/img/arrowBlueRight.png" alt="arrow go to kitchen page" />
+            </div>
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="cards">
+            <div class="cardText">
+              <p>lightning</p>
+            </div>
+            <div class="arrowRight">
+              <img src="/assets/img/arrowBlueRight.png" alt="arrow go to lightning page" />
+            </div>
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="cards">
+            <div class="cardText">
+              <p>laundry</p>
+            </div>
+            <div class="arrowRight">
+              <img src="/assets/img/arrowBlueRight.png" alt="arrow go to laundry page" />
+            </div>
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="cards">
+            <div class="cardText">
+              <p>yard</p>
+            </div>
+            <div class="arrowRight">
+              <img src="/assets/img/arrowBlueRight.png" alt="arrow go to yard page" />
+            </div>
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="cards">
+            <div class="cardText">
+              <p>miscellaneous</p>
+            </div>
+            <div class="arrowRight">
+              <img src="/assets/img/arrowBlueRight.png" alt="arrow go to miscellaneous page" />
+            </div>
+          </div>
+        </a>
+      </div>
+    </div> -->
+
+  <!-- </div>
+  <div class="navbar">
+    <div class="navIcon">
+      <a href="notification"><img src="assets/img/notification.png" alt="icon notifications" />notification</a>
+    </div>
+    <div class="navIcon">
+      <a href="cameras"><img src="assets/img/camera.png" alt="icon cameras" />cameras</a>
+    </div>
+    <div class="navIcon">
+      <a href="home.html"><img src="assets/img/home.png" alt="icon home" />kāinga</a>
+    </div>
+    <div class="navIcon">
+      <a href="utility"><img src="assets/img/utility.png" alt="icon utilities" />utility</a>
+    </div>
+    <div class="navIcon">
+      <a href="settings"><img src="assets/img/settings.png" alt="icon settings" />settings</a>
+    </div>
+  </div> -->
+  <!-- <script src="assets/js/main.js"></script>
+  <script src="assets/js/buttons.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
