@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>home/kainga</title>
+  <title>Transport search form</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/main.css" />
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.ico" /> -->
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group col-md-4">
               <label class="control-label" for="pickUpDate">Pick up date</label>
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="pickUpDate" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
             <div class="form-group col-md-3">
               <label for="pickUpTime">Pick up time</label>
@@ -102,12 +102,46 @@
             </div>
             <div class="form-group col-md-7">
               <label class="control-label" for="tripDistance">Estimated distance of your trip</label>
-              <input type="text" class="form-control" id="pickUpTime" placeholder="0km">
+              <input type="text" class="form-control" id="tripDistance" placeholder="0km">
             </div>
           </div>
-          <button type="submit" class="btn custom-btn" id="btnSearchTransportForm">See available transport</button>
+          <button type="button" class="btn custom-btn" id="btnSearchTransportForm" data-toggle="modal" data-target="#exampleModal">See available transport</button>
         </form>
       </div>
+
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Important information</h5>
+            </div>
+            <div class="modal-body">
+              <p class="bold">Drivers License Requirements</p>
+              <p>The minimum rental age is 21 years.</p>
+              <p>For renters under 25 years, additional charges may apply and could be paid at the location.</p>
+              <p>NZ law requires a current foreign driver’s licence in another language also be accompanied by an English translation or an International Drivers Permit. This translation must be provided by an authorised service or nominated authority. 
+              </p>
+
+              <p class="bold">Insurance</p>
+              <p>Standard Insurance Liability (Excess $3000 +GST) @ $0.00 Per Day$0.00
+                Standard Insurance with $3000+GST excess (drivers 25+) included in the daily rate free of charge. (Other insurance options could be paid at the location.)
+              </p>
+
+              <p class="bold">Road User Charge</p>
+              <p>SDiesel and Electric vehicles in New Zealand will have a charge of NZD$0.0874 including GST per km.
+              </p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn custom-btn">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </main>
 
@@ -233,6 +267,7 @@
   </div> -->
   <!-- <script src="assets/js/main.js"></script>
   <script src="assets/js/buttons.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 

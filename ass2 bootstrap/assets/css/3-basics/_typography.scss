@@ -20,6 +20,26 @@ body {
         // font-size: 2.6em;
     }
 }
+.modal-content {
+    border-radius: 6px;
+    border:0;
+    h5 {
+        font-size: 18px;
+        padding-bottom:2% ;
+    }
+}
+.modal-body {
+    p {
+        font-size: 0.8em;
+        color: $textLightGrey;
+        padding: 7px 0;
+    }
+    .bold {
+        font-weight: 600;
+        color: $textMainDarkGrey;
+        padding:15px 0 10px;
+    }
+}
 // h1 {
 //     font-family: "Sono";
 //     // font-size: 2.6em;

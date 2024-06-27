@@ -316,6 +316,10 @@ template {
   width: 100%;
 }
 
+.modal .custom-btn {
+  width: 73px;
+}
+
 a {
   text-decoration: none;
 }
@@ -332,6 +336,26 @@ body h1, body p {
   font-weight: 600;
   text-transform: uppercase;
   color: white;
+}
+
+.modal-content {
+  border-radius: 6px;
+  border: 0;
+}
+.modal-content h5 {
+  font-size: 18px;
+  padding-bottom: 2%;
+}
+
+.modal-body p {
+  font-size: 0.8em;
+  color: #999999;
+  padding: 7px 0;
+}
+.modal-body .bold {
+  font-weight: 600;
+  color: #2D2D2D;
+  padding: 15px 0 10px;
 }
 
 .floatLeft {
@@ -389,23 +413,62 @@ header img {
   padding: 4%;
 }
 
+.modal-content {
+  padding: 8%;
+  margin: 30% auto 0;
+}
+
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.modal-backdrop {
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important; /* For Safari */
+}
+
+.modal-dialog {
+  margin: 0 auto;
+}
+
 @media only screen and (min-width: 1600px) {
   #h1Title h1 {
     font-size: 2.6em;
+  }
+  .modal-content {
+    width: 765px;
   }
 }
 @media only screen and (max-width: 1350px) {
   #h1Title h1 {
     font-size: 2em;
   }
+  .modal-content {
+    width: 765px;
+  }
+}
+@media only screen and (min-width: 1350px) {
+  .modal-content {
+    width: 765px;
+  }
 }
 @media only screen and (max-width: 1200px) {
   #h1Title h1 {
     font-size: 1.8em;
   }
+  .modal-content {
+    width: 600px;
+  }
 }
 @media only screen and (max-width: 1100px) {
   #h1Title h1 {
     font-size: 1.6em;
+  }
+  .modal-content {
+    width: 500px;
   }
 }/*# sourceMappingURL=main.css.map */
