@@ -9,5 +9,13 @@
     .custom-btn {
         width: 73px;
     }
-
 } 
+.card {
+    .custom-btn {
+        background-color: #fff;
+        border: $bgBtnGreen;
+        color: $bgBtnGreen;
+        border: 2px solid;
+        margin-top: 40px;
+    }
+}

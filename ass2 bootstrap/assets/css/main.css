@@ -320,6 +320,14 @@ template {
   width: 73px;
 }
 
+.card .custom-btn {
+  background-color: #fff;
+  border: #41913C;
+  color: #41913C;
+  border: 2px solid;
+  margin-top: 40px;
+}
+
 a {
   text-decoration: none;
 }
@@ -330,6 +338,10 @@ body {
 }
 body h1, body p {
   margin: 0;
+}
+
+input, select {
+  font-family: "Open Sans";
 }
 
 #h1Title h1 {
@@ -356,6 +368,28 @@ body h1, body p {
   font-weight: 600;
   color: #2D2D2D;
   padding: 15px 0 10px;
+}
+
+.form input {
+  font-size: 1em;
+  color: #999999;
+}
+.form select {
+  font-size: 1em;
+  color: #999999;
+}
+
+.card p {
+  font-size: 0.8em;
+  margin: 3px 0;
+}
+.card .bold {
+  font-weight: 600;
+  color: #2D2D2D;
+}
+.card h6 {
+  margin: 10px 0 5px;
+  padding-top: 10px;
 }
 
 .floatLeft {
@@ -426,11 +460,6 @@ header img {
   border-top: 0;
 }
 
-.modal-backdrop {
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important; /* For Safari */
-}
-
 #availableTransport {
   width: 80%;
   height: 100%;
@@ -440,20 +469,42 @@ header img {
 }
 
 .card {
-  height: 515px;
-  width: 254px;
+  height: 100%;
+  width: 294px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 15px;
+}
+.card img {
+  margin: 10px auto;
 }
 
 #availableTransport {
   padding: 4%;
 }
 
-.modal-dialog {
-  margin: 0 auto;
+.link {
+  margin-bottom: 28px;
+}
+.link img {
+  width: 6px;
+  height: 10px;
+  margin-right: 9px;
+}
+.link a {
+  color: #999999;
 }
 
-#searchTransportForm, #h1Title {
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.hidden {
   display: none;
 }
 

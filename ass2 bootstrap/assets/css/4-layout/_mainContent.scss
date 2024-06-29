@@ -53,14 +53,6 @@ header {
 }
 
 
-
-.modal-backdrop {
-    backdrop-filter: blur(10px)!important;
-    -webkit-backdrop-filter: blur(10px) !important;/* For Safari */
-}
-
-
-
 #availableTransport {
     width:80%;
     height: 100%;
@@ -69,39 +61,42 @@ header {
     margin: 0 auto;
 }
 .card {
-    height: 515px;
-    width: 254px;
+    height: 100%;
+    width: 294px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 15px;
+    img{
+        margin: 10px auto ;
+    }
 }
 #availableTransport {
     padding: 4%;
 }
-
-
-
-
-
-.modal-dialog {
-    margin: 0 auto;
-//     max-width: 100%;
+.link {
+    margin-bottom:28px;
+    img{
+        width: 6px;
+        height: 10px;
+        margin-right: 9px;
+    }
+    a {
+        color: $textLightGrey;
+    }
 }
-    // filter: blur(5px);
 
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);//blur bg behinde the modal
+}
 
-#searchTransportForm, #h1Title {
+.hidden{
     display: none;
-}
-
-
-
-
-// .listContainer,
-// .subtitle,
-// .cardSubtitle,
-// .cardsBlock {
-//   @include width90center;
-// }
-
-// .hidden{
-//     visibility:hidden;
-//   }
+  }

@@ -11,6 +11,9 @@ body {
         margin: 0;
     }
   }
+  input, select {
+    font-family:'Open Sans';
+  }
 
 #h1Title {
     h1 {
@@ -40,43 +43,28 @@ body {
         padding:15px 0 10px;
     }
 }
-// h1 {
-//     font-family: "Sono";
-//     // font-size: 2.6em;
-//     color: $textBlue;
-//     text-transform: capitalize;
-//     letter-spacing: -0.03em;
-// }
-// h2 {
-//     font-family:"Sono";
-//     font-size: 1.6em;
-//     text-transform:uppercase;
-//     letter-spacing: -0.02em;
-//     font-weight: 300;
-// }
-// h3 {
-//     font-family:"Open sans";
-//     font-size: 1em;
-//     text-transform:uppercase;
-//     color: $textBlue;
-//     font-weight: 700;
-// }
-// p,form,input {
-//     font-family: 'Open sans';
-// }
+.form {
+    input {
+        font-size: 1em;
+        color: $textLightGrey;
+    }
+    select {
+        font-size: 1em;
+        color: $textLightGrey;
+    }
+}
 
-// #loginBlock p {
-//     text-align: center;
-//     font-size: 0.875em;
-// }
-// p {
-//     color: $textBlue;
-// }
-
-// p.bold {
-//     font-weight: bold;
-// }
-
-// #welcomeText {
-//     text-align: center;
-// }
+.card {
+    p{
+        font-size: 0.8em;
+        margin: 3px 0;
+    }
+    .bold{
+        font-weight: 600;
+        color: $textMainDarkGrey;
+    }
+    h6 {
+        margin: 10px 0 5px;
+        padding-top: 10px;
+    }
+}
