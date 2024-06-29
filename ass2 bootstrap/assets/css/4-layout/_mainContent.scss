@@ -61,6 +61,22 @@ header {
 
 
 
+#availableTransport {
+    width:80%;
+    height: 100%;
+    background-color: white;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+.card {
+    height: 515px;
+    width: 254px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+#availableTransport {
+    padding: 4%;
+}
+
 
 
 
@@ -72,9 +88,9 @@ header {
     // filter: blur(5px);
 
 
-// #searchTransportForm, #h1Title {
-//     display: none;
-// }
+#searchTransportForm, #h1Title {
+    display: none;
+}
 
 
 
