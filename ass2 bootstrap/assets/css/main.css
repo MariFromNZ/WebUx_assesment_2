@@ -480,6 +480,12 @@ header img {
   padding: 4%;
 }
 
+.required-field:after {
+  content: "*";
+  color: rgb(204, 20, 20);
+  margin-left: 3px;
+}
+
 #confirmationMessage {
   width: 60%;
   height: 100%;
@@ -487,6 +493,12 @@ header img {
   border-radius: 6px;
   margin: 0 auto;
   padding: 4%;
+}
+#confirmationMessage h4 {
+  margin-bottom: 20px;
+}
+#confirmationMessage .link {
+  margin: 50px 0 0;
 }
 
 #availableTransport {

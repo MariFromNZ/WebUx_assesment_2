@@ -14,6 +14,10 @@ function validateForm() {
         errors.push("- Drop-off location.");
     }
 
+    if (document.getElementById("driverAge").value === "21") {
+        errors.push("- Select driver age.");
+    }
+
     if (errors.length > 0) {
         errors.unshift("Please fill in all required fields to continue:");//Insert text before all errors 
 
@@ -40,6 +44,7 @@ document.getElementById("cardSelectButton").onclick = function () {
     document.getElementById("confirmationForm").classList.remove("hidden");
 };
 
+//Hide confirmationForm and shows confirmationMessage
 document.getElementById("confirmationFormButton").onclick = function () {
     document.getElementById("confirmationForm").classList.add("hidden");
     document.getElementById("confirmationMessage").classList.remove("hidden");

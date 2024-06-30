@@ -65,6 +65,12 @@ header {
     padding: 4%;
 }
 
+.required-field:after {
+    content: '*';
+    color: rgb(204, 20, 20);
+    margin-left: 3px;
+}
+
 #confirmationMessage {
     width:60%;
     height: 100%;
@@ -72,6 +78,13 @@ header {
     border-radius: 6px;
     margin: 0 auto;
     padding: 4%;
+
+    h4 {
+        margin-bottom: 20px;
+    }
+    .link {
+        margin: 50px 0 0;
+    }
 }
 
 

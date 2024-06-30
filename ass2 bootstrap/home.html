@@ -31,11 +31,10 @@
           for your trip</h1>
       </div>
       <div class="form floatRight" id="searchTransportForm">
-
         <form onsubmit="return validateForm()">
           <div class="form-row">
             <div class="form-group col-md-5">
-              <label for="pickUpLocation">Pick up location</label>
+              <label for="pickUpLocation">Pick up location<span class="required-field"></span></label>
               <select id="pickUpLocation" class="form-control">
                 <option selected disabled>Select pick up location</option>
                 <option value="">Auckland</option>
@@ -54,7 +53,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-5">
-              <label for="dropOffLocation">Drop-off location</label>
+              <label for="dropOffLocation">Drop-off location<span class="required-field"></span></label>
               <select id="dropOffLocation" class="form-control">
                 <option selected disabled>Select drop-off location</option>
                 <option value="">Auckland</option>
@@ -97,7 +96,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-5">
-              <label for="driverAge">Age</label>
+              <label for="driverAge">Age<span class="required-field"></span></label>
               <select id="driverAge" class="form-control">
                 <option selected>21</option>
                 <option value="">22</option>
@@ -327,12 +326,14 @@
       </div>
 
       <div id="confirmationMessage" class="hidden">
+        <h4>Thank you for your booking!</h4>
+        <p>Confirmation was sent to your email.</p>
+
         <div class="link">
-          <a href="" class="d-flex align-items-center">
+          <a href="" class="d-flex align-items-center floatRight">
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>make another booking</p></a>
         </div>
-        <p>dhkjfhsdjhdskhfksd shf sdhfk ksjhf ksfsf hjkd fh</p>
       </div>
 
     </div>
