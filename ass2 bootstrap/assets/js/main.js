@@ -7,15 +7,15 @@ function validateForm() {
     var errors = [];
 
     if (document.getElementById("pickUpLocation").value === "Select pick up location") {
-        errors.push("Pick up location.");
+        errors.push("- Pick up location.");
     }
 
     if (document.getElementById("dropOffLocation").value === "Select drop-off location") {
-        errors.push("Drop-off location.");
+        errors.push("- Drop-off location.");
     }
 
     if (errors.length > 0) {
-        errors.unshift("Please fill out all required fields to continue:");//Insert text before all errors 
+        errors.unshift("Please fill in all required fields to continue:");//Insert text before all errors 
 
         alert(errors.join("\n"));//Separates errors
         return false;  //Prevent form submission

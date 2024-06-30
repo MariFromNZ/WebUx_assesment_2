@@ -67,4 +67,11 @@ body {
         margin: 10px 0 5px;
         padding-top: 10px;
     }
+    p,h5,h6 {
+        color: $textMainDarkGrey;
+    }
+    h5 {
+        font-weight: 600;
+    }
+
 }

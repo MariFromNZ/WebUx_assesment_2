@@ -326,6 +326,7 @@ template {
   color: #41913C;
   border: 2px solid;
   margin-top: 40px;
+  font-weight: 600;
 }
 
 a {
@@ -390,6 +391,12 @@ input, select {
 .card h6 {
   margin: 10px 0 5px;
   padding-top: 10px;
+}
+.card p, .card h5, .card h6 {
+  color: #2D2D2D;
+}
+.card h5 {
+  font-weight: 600;
 }
 
 .floatLeft {
@@ -461,7 +468,7 @@ header img {
 }
 
 #availableTransport {
-  width: 80%;
+  width: 100%;
   height: 100%;
   background-color: white;
   border-radius: 6px;
