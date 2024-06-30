@@ -329,6 +329,10 @@ template {
   font-weight: 600;
 }
 
+#confirmationForm .custom-btn {
+  margin-top: 40px;
+}
+
 a {
   text-decoration: none;
 }
@@ -465,6 +469,24 @@ header img {
 
 .modal-footer {
   border-top: 0;
+}
+
+#confirmationForm {
+  width: 60%;
+  height: 100%;
+  background-color: white;
+  border-radius: 6px;
+  margin: 0 auto;
+  padding: 4%;
+}
+
+#confirmationMessage {
+  width: 60%;
+  height: 100%;
+  background-color: white;
+  border-radius: 6px;
+  margin: 0 auto;
+  padding: 4%;
 }
 
 #availableTransport {

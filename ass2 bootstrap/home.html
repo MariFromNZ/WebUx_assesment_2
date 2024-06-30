@@ -183,7 +183,7 @@
               <div>
                 <p>Estimated trip fuel 7,4L</p>
               </div>
-              <button type="button" class="btn custom-btn">Select</button>
+              <button id="cardSelectButton" type="button" class="btn custom-btn">Select</button>
             </div>
 
             <div class="card">
@@ -290,6 +290,49 @@
 
           </div>
         </div>
+      </div>
+
+      <div id="confirmationForm" class="hidden">
+        <div class="link">
+          <a href="" class="d-flex align-items-center">
+            <img src="./assets/img/goBackArrow.png" alt="">
+            <p>go back to available transport</p></a>
+        </div>
+        <form>
+          <div class="form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">First name</label>
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">Last name</label>
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputPhone">Phone number</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="+6402041975383">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail">Email address</label>
+                <input type="text" class="form-control" id="inputPhone" placeholder="email@gmail.com">
+              </div>
+            </div>
+            <button class="btn custom-btn" id="confirmationFormButton" type="button">Confirm your booking</button>
+          </div>
+
+        </form>
+      </div>
+
+      <div id="confirmationMessage" class="hidden">
+        <div class="link">
+          <a href="" class="d-flex align-items-center">
+            <img src="./assets/img/goBackArrow.png" alt="">
+            <p>make another booking</p></a>
+        </div>
+        <p>dhkjfhsdjhdskhfksd shf sdhfk ksjhf ksfsf hjkd fh</p>
       </div>
 
     </div>

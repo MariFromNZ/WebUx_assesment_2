@@ -26,10 +26,21 @@ function validateForm() {
     return false;  //Prevent form submission to show modal first
 }
 
-//Hide searchTransportForm and shows availableTransportForm
+//Hide searchTransportForm and shows availableTransport
 document.getElementById("modalOkButton").onclick = function () {
     document.getElementById("exampleModal").classList.add("hidden");
     document.getElementById("searchTransportForm").classList.add("hidden");
     document.getElementById("h1Title").classList.add("hidden");
     document.getElementById("availableTransport").classList.remove("hidden");
+};
+
+//Hide availableTransportForm and shows confirmationForm
+document.getElementById("cardSelectButton").onclick = function () {
+    document.getElementById("availableTransport").classList.add("hidden");
+    document.getElementById("confirmationForm").classList.remove("hidden");
+};
+
+document.getElementById("confirmationFormButton").onclick = function () {
+    document.getElementById("confirmationForm").classList.add("hidden");
+    document.getElementById("confirmationMessage").classList.remove("hidden");
 };
