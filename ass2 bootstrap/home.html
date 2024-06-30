@@ -98,12 +98,12 @@
             <div class="form-group col-md-5">
               <label for="driverAge">Age<span class="required-field"></span></label>
               <select id="driverAge" class="form-control">
-                <option selected>21</option>
+                <option selected>Select driver age</option>
+                <option value="">21</option>
                 <option value="">22</option>
                 <option value="">23</option>
                 <option value="">24</option>
-                <option value="">25</option>
-                <option value="">26+</option>
+                <option value="">25+</option>
               </select>
             </div>
             <div class="form-group col-md-7">
@@ -297,16 +297,16 @@
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>go back to available transport</p></a>
         </div>
-        <form>
-          <div class="form">
+        <form onsubmit="return validateConfirmationForm()">
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputFirstName">First name</label>
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" id="inputFirstName" class="form-control" placeholder="First name">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputLastName">Last name</label>
-                <input type="text" class="form-control" placeholder="Last name">
+                <input type="text" id="inputLastName" class="form-control" placeholder="Last name">
               </div>
             </div>
             <div class="form-row">
@@ -319,8 +319,8 @@
                 <input type="text" class="form-control" id="inputPhone" placeholder="email@gmail.com">
               </div>
             </div>
-            <button class="btn custom-btn" id="confirmationFormButton" type="button">Confirm your booking</button>
-          </div>
+            <button class="btn custom-btn" id="confirmationFormButton" type="submit">Confirm your booking</button>
+          
 
         </form>
       </div>

@@ -14,8 +14,8 @@ function validateForm() {
         errors.push("- Drop-off location.");
     }
 
-    if (document.getElementById("driverAge").value === "21") {
-        errors.push("- Select driver age.");
+    if (document.getElementById("driverAge").value === "Select driver age") {
+        errors.push("- Driver age.");
     }
 
     if (errors.length > 0) {
@@ -45,7 +45,67 @@ document.getElementById("cardSelectButton").onclick = function () {
 };
 
 //Hide confirmationForm and shows confirmationMessage
-document.getElementById("confirmationFormButton").onclick = function () {
+// document.getElementById("confirmationFormButton").onclick = function () {
+//     document.getElementById("confirmationForm").classList.add("hidden");
+//     document.getElementById("confirmationMessage").classList.remove("hidden");
+// };
+
+
+
+//Validation for confirmationForm
+// function validateConfirmationForm() {
+
+//     var errors = [];
+
+//     if (document.getElementById("inputFirstName").value.trim() === "") {
+//         errors.push("- First name");
+//     }
+
+//     if (document.getElementById("inputLastName").value.trim() === "") {
+//         errors.push("- Last name.");
+//     }
+
+//     if (errors.length > 0) {
+//         errors.unshift("Please fill in all required fields to continue:");
+
+//         alert(errors.join("\n"));
+//         console.log()
+//         return false;  
+//     }
+//     console.log()
+//     document.getElementById("confirmationForm").classList.add("hidden");
+//     document.getElementById("confirmationMessage").classList.remove("hidden");
+//     return false;
+// }
+
+
+//Validation for confirmationForm  - Check that characters only letters
+function validateConfirmationForm() {
+    var errors = [];
+
+    var firstName = document.getElementById("inputFirstName").value.trim();
+    var lastName = document.getElementById("inputLastName").value.trim();
+
+    if (firstName === "") {
+        errors.push("- First name is required");
+    } else if (!/^[A-Za-z]+$/.test(firstName)) {//Check that characters only letters
+        errors.push("- First name should contain only letters.");
+    }
+
+    if (lastName === "") {
+        errors.push("- Last name is required");
+    } else if (!/^[A-Za-z]+$/.test(lastName)) {
+        errors.push("- Last name should contain only letters.");
+    }
+
+    if (errors.length > 0) {
+        errors.unshift("Please fill in all required fields correctly:");
+        alert(errors.join("\n"));
+        return false;
+    }
+
     document.getElementById("confirmationForm").classList.add("hidden");
     document.getElementById("confirmationMessage").classList.remove("hidden");
-};
+    return false;
+}
+
