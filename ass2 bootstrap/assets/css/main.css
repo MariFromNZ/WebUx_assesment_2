@@ -376,11 +376,11 @@ input, select {
 }
 
 .form input {
-  font-size: 1em;
+  font-size: 0.875em;
   color: #999999;
 }
 .form select {
-  font-size: 1em;
+  font-size: 0.875em;
   color: #999999;
 }
 
@@ -510,13 +510,16 @@ header img {
 }
 
 .card {
-  height: 100%;
+  height: 485px;
   width: 294px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   padding: 15px;
 }
 .card img {
   margin: 10px auto;
+}
+.card #motorbikeImg {
+  margin-top: 21px;
 }
 
 #availableTransport {
@@ -559,10 +562,17 @@ header img {
 }
 @media only screen and (max-width: 1350px) {
   #h1Title h1 {
-    font-size: 2em;
+    font-size: 1.6em;
   }
   .modal-content {
     width: 765px;
+  }
+  #h1Title {
+    width: 40%;
+    padding: 2%;
+  }
+  #searchTransportForm {
+    width: 55%;
   }
 }
 @media only screen and (min-width: 1350px) {
@@ -572,10 +582,18 @@ header img {
 }
 @media only screen and (max-width: 1200px) {
   #h1Title h1 {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
   .modal-content {
     width: 600px;
+  }
+  #h1Title {
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 4%;
+  }
+  #searchTransportForm {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 1100px) {
@@ -584,5 +602,24 @@ header img {
   }
   .modal-content {
     width: 500px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #h1Title h1 {
+    font-size: 1.6em;
+  }
+  .modal-content {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #h1Title h1 {
+    font-size: 1em;
+  }
+  #h1Title {
+    margin-top: 50px;
+  }
+  header {
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=main.css.map */

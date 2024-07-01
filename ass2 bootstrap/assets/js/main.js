@@ -135,3 +135,23 @@ function validateConfirmationForm() {
     return false;
 }
 
+
+
+//remove classes for responsive design based on screen size
+$(document).ready(function () {
+    function screenSizeResponsive() {
+        if ($(window).width() < 1200) {
+            $("#h1Title").removeClass("floatLeft");
+            $("#searchTransportForm").removeClass("floatRight");
+        } else {
+            $("#h1Title").addClass("floatLeft");// Add classes again for big screens
+            $("#searchTransportForm").addClass("floatRight");
+        }
+    }
+
+    screenSizeResponsive(); // Initial call on document ready
+
+    $(window).resize(function () {
+        screenSizeResponsive(); // Start function again for resize
+    });
+});
