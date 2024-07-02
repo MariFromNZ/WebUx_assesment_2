@@ -27,6 +27,9 @@
     #searchTransportForm {
         width: 55%;
     }
+    #confirmationForm {
+        width: 80%;
+    }
 }
 
 @media only screen and (min-width: 1350px) {
@@ -61,15 +64,40 @@
     .modal-content {
         width: 500px;
     }
+    #confirmationMessage{
+        padding: 6%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #confirmationMessage{
+        width: 85%;
+    }
 }
 
 
 @media only screen and (max-width: 600px) {
     #h1Title h1 {
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
     .modal-content {
         width: 90%;
+    }
+    #confirmationMessage {
+        width: 100%;
+        height: 200px;
+        .link {
+            margin-top: 60px;
+            p {
+                font-size: 0.875em;
+            }
+        }
+        h4 {
+            font-size: 1.3em;
+        }
+        p {
+            font-size: 0.875em;
+        }
     }
 }
 
@@ -83,5 +111,28 @@
     header {
         margin-bottom: 0;
     }
+    #confirmationForm {
+        margin: 50px auto;
+        .link {
+            p {
+                font-size: 0.875em;
+            }
+        }
+    }
+    #confirmationMessage{
+        height: 160px;
+        margin-top: 50px;
+        .link {
+            margin-top: 20px;
+        }
+    }
 
+}
+@media only screen and (max-width: 410px) {
+    .card {
+        width: 90%;
+    }
+    #confirmationMessage{
+        height: 200px;
+    }
 }

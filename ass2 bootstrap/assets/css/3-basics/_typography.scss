@@ -33,7 +33,7 @@ body {
 }
 .modal-body {
     p {
-        font-size: 0.8em;
+        font-size: 0.875em;
         color: $textLightGrey;
         padding: 7px 0;
     }
@@ -43,7 +43,7 @@ body {
         padding:15px 0 10px;
     }
 }
-.form {
+#searchTransportForm, #confirmationForm {
     input {
         font-size: 0.875em;
         color: $textLightGrey;
@@ -54,9 +54,10 @@ body {
     }
 }
 
+
 .card {
     p{
-        font-size: 0.8em;
+        font-size: 0.875em;
         margin: 3px 0;
     }
     .bold{
