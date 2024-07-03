@@ -75,12 +75,12 @@
               <label for="transportCapacity">Transport capacity</label>
               <select id="transportCapacity" class="form-control">
                 <option selected>Any capacity</option>
-                <option value="">1 person</option>
-                <option value="">2 people</option>
-                <option value="">3 people</option>
-                <option value="">4 people</option>
-                <option value="">5 people</option>
-                <option value="">6 people</option>
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5 people</option>
+                <option value="6">6 people</option>
               </select>
             </div>
             <div class="col-md-7">
@@ -143,8 +143,8 @@
       </div>
       
       <div id="availableTransport" class="hidden" >
-        <div class="link">
-          <a href="" class="d-flex align-items-center">
+        <div class="link" id="goBackToSearch">
+          <a href="home.html" class="d-flex align-items-center">
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>go back to search</p></a>
         </div>
@@ -183,13 +183,13 @@
                 <div>
                   <p>Estimated trip fuel 7,4L</p>
                 </div>
-                <button id="cardSelectButton" type="button" class="btn custom-btn">Select</button>
+                <button id="cardMotorbikeButton" type="button" class="btn custom-btn cardSelectButton disabled">Select</button>
               </div>
             </div>
             
             <div class="col-12 col-md-6 col-lg-4 mb-4 col-xxl-3 d-flex">
               <div class="card mx-auto">
-                <img src="./assets/img/small car.png" alt="motorbike image" class="img-fluid">
+                <img src="./assets/img/small car.png" alt="amall car image" class="img-fluid">
                 <div class="d-flex justify-content-between">
                   <div><h5>Small car</h5></div>
                   <div><p>129$/day</p></div>
@@ -219,13 +219,13 @@
                 <div>
                   <p>Estimated trip fuel 17L</p>
                 </div>
-                <button type="button" class="btn custom-btn">Select</button>
+                <button id="cardSmallCarButton" type="button" class="btn custom-btn cardSelectButton disabled">Select</button>
               </div>
             </div>
             
             <div class="col-12 col-md-6 col-lg-4 mb-4 col-xxl-3 d-flex">
               <div class="card mx-auto">
-                <img src="./assets/img/large car.png" alt="motorbike image" class="img-fluid">
+                <img src="./assets/img/large car.png" alt="large car image" class="img-fluid">
                 <div class="d-flex justify-content-between">
                   <div><h5>Large car</h5></div>
                   <div><p>144$/day</p></div>
@@ -255,13 +255,13 @@
                 <div>
                   <p>Estimated trip fuel 19,4L</p>
                 </div>
-                <button type="button" class="btn custom-btn">Select</button>
+                <button id="cardLargeCarButton" type="button" class="btn custom-btn cardSelectButton disabled">Select</button>
               </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 mb-4b col-xxl-3 d-flex">
               <div class="card mx-auto">
-                <img src="./assets/img/motor home.png" alt="motorbike image" class="img-fluid">
+                <img src="./assets/img/motor home.png" alt="motor home image" class="img-fluid">
                 <div class="d-flex justify-content-between">
                   <div><h5>Motor home</h5></div>
                   <div><p>200$/day</p></div>
@@ -291,7 +291,7 @@
                 <div>
                   <p>Estimated trip fuel 34L</p>
                 </div>
-                <button type="button" class="btn custom-btn">Select</button>
+                <button id="cardMotorHomeButton" type="button" class="btn custom-btn cardSelectButton disabled">Select</button>
               </div>
             </div>
 
@@ -300,8 +300,8 @@
       </div>
 
       <div id="confirmationForm" class="hidden">
-        <div class="link">
-          <a href="" class="d-flex align-items-center">
+        <div class="link" id="goBackToSearch">
+          <a href="home.html" class="d-flex align-items-center">
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>go back to available transport</p></a>
         </div>
@@ -337,8 +337,8 @@
         <h4>Thank you for your booking!</h4>
         <p>Confirmation was sent to your email.</p>
 
-        <div class="link">
-          <a href="" class="d-flex align-items-center floatRight">
+        <div class="link" id="goBackToSearch">
+          <a href="home.html" class="d-flex align-items-center floatRight">
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>make another booking</p></a>
         </div>

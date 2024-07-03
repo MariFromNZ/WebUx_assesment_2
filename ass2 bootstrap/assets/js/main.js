@@ -51,44 +51,19 @@ document.getElementById("modalOkButton").onclick = function () {
 };
 
 //Hide availableTransportForm and shows confirmationForm
-document.getElementById("cardSelectButton").onclick = function () {
-    document.getElementById("availableTransport").classList.add("hidden");
-    document.getElementById("confirmationForm").classList.remove("hidden");
-};
-
-//Hide confirmationForm and shows confirmationMessage
-// document.getElementById("confirmationFormButton").onclick = function () {
-//     document.getElementById("confirmationForm").classList.add("hidden");
-//     document.getElementById("confirmationMessage").classList.remove("hidden");
+// document.getElementById("cardSelectButton").onclick = function () {
+//     document.getElementById("availableTransport").classList.add("hidden");
+//     document.getElementById("confirmationForm").classList.remove("hidden");
 // };
 
+//Hide availableTransportForm and shows confirmationForm for all cards 
+$(document).ready(function() {
+    $(".cardSelectButton").on("click", function() {
+        $("#availableTransport").addClass("hidden");
+        $("#confirmationForm").removeClass("hidden");
+    });
+});
 
-
-//Validation for confirmationForm
-// function validateConfirmationForm() {
-
-//     var errors = [];
-
-//     if (document.getElementById("inputFirstName").value.trim() === "") {
-//         errors.push("- First name");
-//     }
-
-//     if (document.getElementById("inputLastName").value.trim() === "") {
-//         errors.push("- Last name.");
-//     }
-
-//     if (errors.length > 0) {
-//         errors.unshift("Please fill in all required fields to continue:");
-
-//         alert(errors.join("\n"));
-//         console.log()
-//         return false;  
-//     }
-//     console.log()
-//     document.getElementById("confirmationForm").classList.add("hidden");
-//     document.getElementById("confirmationMessage").classList.remove("hidden");
-//     return false;
-// }
 
 
 //Validation for confirmationForm 
@@ -166,6 +141,8 @@ $(document).ready(function () {
 
 
 //date picker library Flatpickr
+let startDate, endDate, range;
+
 flatpickr("#pickUpDate", {
     minDate: "today", // Disable previous days
     mode: "range",
@@ -175,9 +152,9 @@ flatpickr("#pickUpDate", {
 
       onChange: function(selectedDates, dateStr, instance) {// Calculate difference
         if (selectedDates.length > 1) {
-          let startDate = selectedDates[0];
-          let endDate = selectedDates[selectedDates.length - 1];
-          let range = Math.ceil((endDate - startDate) / 86400000); //math.cell rounds up the result. 86400000 - amount od milliseconds in 1 day
+          startDate = selectedDates[0];
+          endDate = selectedDates[selectedDates.length - 1];
+          range = Math.ceil((endDate - startDate) / 86400000); //math.cell rounds up the result. 86400000 - amount od milliseconds in 1 day
 
           if (range > 15) {
             alert("Maximum allowed duration is 15 days.");
@@ -191,3 +168,151 @@ flatpickr("#pickUpDate", {
         }
       }
 });
+
+
+
+
+
+
+var duration = range;
+
+var transportType = document.getElementById("transportType").value.trim();
+
+// disable transport cards buttons based on capacity 
+function availabilityByCapasity(){
+
+    var transportCapacity = document.getElementById("transportCapacity").value.trim();
+    transportCapacity = parseInt(transportCapacity,10);
+
+    console.log('capacity', transportCapacity);
+
+    if ( range = 1 ) {
+        document.getElementById("cardMotorbikeButton").classList.remove("disabled");
+    } else {
+        document.getElementById("cardMotorbikeButton").classList.add("disabled");
+    }
+
+    if ( range < 2 ) {
+        document.getElementById("cardSmallCarButton").classList.remove("disabled");
+    } else {
+        document.getElementById("cardSmallCarButton").classList.add("disabled");
+    }
+
+    if ( range < 5) {
+        document.getElementById("cardLargeCarButton").classList.remove("disabled");
+    } else {
+        document.getElementById("cardLargeCarButton").classList.add("disabled");
+    }
+
+    if ( range >= 2 && range < 6 ) {
+        document.getElementById("cardMotorHomeButton").classList.remove("disabled");
+    }else {
+        document.getElementById("cardMotorHomeButton").classList.add("disabled");
+    }
+
+}
+document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByCapasity);
+
+
+
+
+
+
+
+
+// function calculateDuration(){
+//     range = Math.ceil((endDate - startDate) / 86400000);
+
+//     console.log('range',range);
+// }
+
+
+
+// function calculateDuration(){
+//     range = Math.ceil((endDate - startDate) / 86400000);
+
+//     console.log('range',range);
+
+//     if (range => 2) {
+//         alert("2 options are available");
+//     }
+
+//     if ( 1 <= range < 6 ) {
+//         document.getElementById("cardMotorbikeButton").classList.remove("disabled");
+//     } else {
+//         document.getElementById("cardMotorbikeButton").classList.add("disabled");
+//     }
+
+//     if ( 1 <= range < 11 ) {
+//         document.getElementById("cardSmallCarButton").classList.remove("disabled");
+//     } else {
+//         document.getElementById("cardSmallCarButton").classList.add("disabled");
+//     }
+
+//     if ( 3 <= range < 11 ) {
+//         document.getElementById("cardLargeCarButton").classList.remove("disabled");
+//     } else {
+//         document.getElementById("cardLargeCarButton").classList.add("disabled");
+//     }
+
+//     if ( 2 <= range < 16 ) {
+//         document.getElementById("cardMotorHomeButton").classList.remove("disabled");
+//     }else {
+//         document.getElementById("cardMotorHomeButton").classList.add("disabled");
+//     }
+// }
+
+// document.getElementById('btnSearchTransportForm').addEventListener('click', calculateDuration);
+
+
+
+//calculate duration and disable transport cards buttons based on duration
+function calculateDuration(){
+    range = Math.ceil((endDate - startDate) / 86400000);
+
+    console.log('range',range);
+
+    if (range => 2) {
+        alert("2 options are available");
+    }
+
+    if ( range >= 1 && range < 6 ) {
+        document.getElementById("cardMotorbikeButton").classList.remove("disabled");
+    } else {
+        document.getElementById("cardMotorbikeButton").classList.add("disabled");
+    }
+
+    if ( range >= 1 && range < 11) {
+        document.getElementById("cardSmallCarButton").classList.remove("disabled");
+    } else {
+        document.getElementById("cardSmallCarButton").classList.add("disabled");
+    }
+
+    if ( range >= 3 && range < 11 ) {
+        document.getElementById("cardLargeCarButton").classList.remove("disabled");
+    } else {
+        document.getElementById("cardLargeCarButton").classList.add("disabled");
+    }
+
+    if ( range >= 2 && range < 16 ) {
+        document.getElementById("cardMotorHomeButton").classList.remove("disabled");
+    }else {
+        document.getElementById("cardMotorHomeButton").classList.add("disabled");
+    }
+}
+
+document.getElementById('btnSearchTransportForm').addEventListener('click', calculateDuration);
+
+
+
+
+
+
+
+
+//add disable class back when click a link
+// $(document).ready(function() {
+//     $('#goBackToSearch').on('click', function() {
+//         $("#cardMotorbikeButton, #cardSmallCarButton, #cardLargeCarButton, #cardMotorHomeButton").addClass("disabled");
+//     });
+// });
