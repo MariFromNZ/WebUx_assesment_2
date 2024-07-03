@@ -22,6 +22,14 @@ function validateForm() {
         errors.push("- Driver age.");
     }
 
+    if (document.getElementById("pickUpDate").value === "") {
+        errors.push("- Pick up date.");
+    }
+
+    if (document.getElementById("dropOffDate").value === "") {
+        errors.push("- Drop-off date.");
+    }
+
     if (errors.length > 0) {
         errors.unshift("Please fill in all required fields to continue:");//Insert text before all errors 
 
@@ -158,20 +166,18 @@ $(document).ready(function () {
 
 
 //date picker library Flatpickr
-flatpickr("#firstRangeInput", {
+flatpickr("#pickUpDate", {
     minDate: "today", // Disable previous days
     mode: "range",
     minRange: 1,
     maxRange: 15,
-    plugins: [new rangePlugin({ input: "#secondRangeInput" })], // Range plagin for two inputs with range in calendar
+    plugins: [new rangePlugin({ input: "#dropOffDate" })], // Range plagin for two inputs with range in calendar
 
       onChange: function(selectedDates, dateStr, instance) {// Calculate difference
         if (selectedDates.length > 1) {
           let startDate = selectedDates[0];
           let endDate = selectedDates[selectedDates.length - 1];
           let range = Math.ceil((endDate - startDate) / 86400000); //math.cell rounds up the result. 86400000 - amount od milliseconds in 1 day
-
-          console.log(range);
 
           if (range > 15) {
             alert("Maximum allowed duration is 15 days.");
