@@ -161,7 +161,7 @@ $(document).ready(function () {
 flatpickr("#firstRangeInput", {
     minDate: "today", // Disable previous days
     mode: "range",
-    minRange: 2,
+    minRange: 1,
     maxRange: 15,
     plugins: [new rangePlugin({ input: "#secondRangeInput" })], // Range plagin for two inputs with range in calendar
 
@@ -178,8 +178,8 @@ flatpickr("#firstRangeInput", {
             instance.clear(); // Clear selection if duration is more then 15 days
           }
 
-          if (range < 2) {
-            alert("Minimum allowed duration is 2 days.");
+          if (range < 1) {
+            alert("Please select 2 dates: for pick up and drop-off.");
             instance.clear(); // Clear selection if duration is less then 2 days
           }
         }
