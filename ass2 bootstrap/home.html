@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transport search form</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/main.css" />
   <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.ico" /> -->
 </head>
@@ -32,8 +33,8 @@
       </div>
       <div class="form floatRight" id="searchTransportForm">
         <form onsubmit="return validateForm()">
-          <div class="form-row">
-            <div class="form-group col-md-5">
+          <div class="row g-3 ">
+            <div class="col-md-5">
               <label for="pickUpLocation">Pick up location<span class="required-field"></span></label>
               <select id="pickUpLocation" class="form-control">
                 <option selected disabled>Select pick up location</option>
@@ -42,17 +43,17 @@
                 <option value="">Christchurch</option>
               </select>
             </div>
-            <div class="form-group col-md-4">
+            <div class="col-md-4">
               <label class="control-label" for="pickUpDate">Pick up date</label>
               <input class="form-control" id="pickUpDate" name="date" placeholder="MM/DD/YYY" type="text" />
             </div>
-            <div class="form-group col-md-3">
+            <div class="col-md-3">
               <label for="pickUpTime">Pick up time</label>
               <input type="text" class="form-control" id="pickUpTime" placeholder="8:00">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-5">
+          <div class="row g-3 mt-2">
+            <div class="col-md-5">
               <label for="dropOffLocation">Drop-off location<span class="required-field"></span></label>
               <select id="dropOffLocation" class="form-control">
                 <option selected disabled>Select drop-off location</option>
@@ -61,17 +62,17 @@
                 <option value="">Christchurch</option>
               </select>
             </div>
-            <div class="form-group col-md-4">
+            <div class="col-md-4">
               <label class="control-label" for="dropOffDate">Drop-off date</label>
               <input class="form-control" id="dropOffDate" name="date" placeholder="MM/DD/YYY" type="text" />
             </div>
-            <div class="form-group col-md-3">
+            <div class="col-md-3">
               <label for="dropOffTime">Drop-off time</label>
               <input type="text" class="form-control" id="dropOffTime" placeholder="8:00">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-5">
+          <div class="row g-3 mt-2">
+            <div class="col-md-5">
               <label for="transportCapacity">Transport capacity</label>
               <select id="transportCapacity" class="form-control">
                 <option selected>Any capacity</option>
@@ -83,7 +84,7 @@
                 <option value="">6 people</option>
               </select>
             </div>
-            <div class="form-group col-md-7">
+            <div class="col-md-7">
               <label for="transportType">Transport type</label>
               <select id="transportType" class="form-control">
                 <option selected>Any type</option>
@@ -94,8 +95,8 @@
               </select>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-5">
+          <div class="row g-3 mt-2">
+            <div class="col-md-5">
               <label for="driverAge">Age<span class="required-field"></span></label>
               <select id="driverAge" class="form-control">
                 <option selected>Select driver age</option>
@@ -106,12 +107,12 @@
                 <option value="">25+</option>
               </select>
             </div>
-            <div class="form-group col-md-7">
+            <div class="col-md-7">
               <label class="control-label" for="tripDistance">Estimated distance of your trip</label>
               <input type="text" class="form-control" id="tripDistance" placeholder="0km">
             </div>
           </div>
-          <button class="btn custom-btn" id="btnSearchTransportForm" type="submit">See available
+          <button class="btn custom-btn mt-5" id="btnSearchTransportForm" type="submit">See available
             transport</button>
         </form>
       </div>
@@ -307,27 +308,27 @@
         </div>
         <form onsubmit="return validateConfirmationForm()">
 
-            <div class="form-row">
-              <div class="form-group col-md-6">
+            <div class="row">
+              <div class="col-md-6">
                 <label for="inputFirstName">First name<span class="required-field"></span></label>
                 <input type="text" id="inputFirstName" class="form-control" placeholder="First name">
               </div>
-              <div class="form-group col-md-6">
+              <div class="col-md-6">
                 <label for="inputLastName">Last name<span class="required-field"></span></label>
                 <input type="text" id="inputLastName" class="form-control" placeholder="Last name">
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
+            <div class="row mt-2">
+              <div class="col-md-6">
                 <label for="inputPhone">Phone number<span class="required-field"></span></label>
                 <input type="text" class="form-control" id="inputPhone" placeholder="+6402041975383">
               </div>
-              <div class="form-group col-md-6">
+              <div class="col-md-6">
                 <label for="inputEmail">Email address<span class="required-field"></span></label>
                 <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="email@gmail.com">
               </div>
             </div>
-            <button class="btn custom-btn" id="confirmationFormButton" type="submit">Confirm your booking</button>
+            <button class="btn custom-btn mt-5" id="confirmationFormButton" type="submit">Confirm your booking</button>
           
 
         </form>
@@ -347,9 +348,10 @@
     </div>
 
   </main>
-
+ 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   <script src="./assets/js/main.js"></script>
 
