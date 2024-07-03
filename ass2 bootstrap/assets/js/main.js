@@ -155,3 +155,33 @@ $(document).ready(function () {
         screenSizeResponsive(); // Start function again for resize
     });
 });
+
+
+//date picker library Flatpickr
+flatpickr("#firstRangeInput", {
+    minDate: "today", // Disable previous days
+    mode: "range",
+    minRange: 2,
+    maxRange: 15,
+    plugins: [new rangePlugin({ input: "#secondRangeInput" })], // Range plagin for two inputs with range in calendar
+
+      onChange: function(selectedDates, dateStr, instance) {// Calculate difference
+        if (selectedDates.length > 1) {
+          let startDate = selectedDates[0];
+          let endDate = selectedDates[selectedDates.length - 1];
+          let range = Math.ceil((endDate - startDate) / 86400000); //math.cell rounds up the result. 86400000 - amount od milliseconds in 1 day
+
+          console.log(range);
+
+          if (range > 15) {
+            alert("Maximum allowed duration is 15 days.");
+            instance.clear(); // Clear selection if duration is more then 15 days
+          }
+
+          if (range < 2) {
+            alert("Minimum allowed duration is 2 days.");
+            instance.clear(); // Clear selection if duration is less then 2 days
+          }
+        }
+      }
+});
