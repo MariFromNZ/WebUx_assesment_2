@@ -247,27 +247,61 @@ $(document).ready(function() {
     console.log('ALL RESET')
 });
 
-//calculate fuel consumption 
-
+//calculate fuel consumption based on distance and transport type
 const motorbikeFuelConsumption = 3.7;
 const smallCarFuelConsumption = 8.5;
 const largeCarFuelConsumption = 9.7;
 const motorHomeFuelConsumption = 17;
 
 function calculateFuel(){
-    var kmInput = document.getElementById("tripDistance").value.trim();
+    var kmInput = document.getElementById("tripDistance").value.trim();//take value from input
     distance = parseInt(kmInput,10);
 
-    motorbikeTripFuel = distance * motorbikeFuelConsumption;
-    smallCarFuel = distance * smallCarFuelConsumption;
-    largeCarTripFuel = distance * largeCarFuelConsumption;
-    motorHomeTripFuel = distance * motorHomeFuelConsumption;
+    motorbikeTripFuel = (distance * motorbikeFuelConsumption) / 100; //calculate trip fuel for each type 
+    smallCarTripFuel = (distance * smallCarFuelConsumption) / 100;
+    largeCarTripFuel = (distance * largeCarFuelConsumption) / 100;
+    motorHomeTripFuel = (distance * motorHomeFuelConsumption) / 100;
 
-    console.log('motorbikeTripFuel', motorbikeTripFuel);
-    console.log('smallCarFuel', smallCarFuel);
-    console.log('largeCarTripFuel', largeCarTripFuel);
-    console.log('motorHomeTripFuel', motorHomeTripFuel);
+    // console.log('motorbikeTripFuel', motorbikeTripFuel);
+    // console.log('smallCarTripFuel', smallCarTripFuel);
+    // console.log('largeCarTripFuel', largeCarTripFuel);
+    // console.log('motorHomeTripFuel', motorHomeTripFuel);
+
+
+    $( "#motorbikeTripFuel span" ).replaceWith('<span>' + motorbikeTripFuel + '</span>');//replace span in transport card to show ftrip fuel consumption
+    $( "#smallCarTripFuel span" ).replaceWith('<span>' + smallCarTripFuel + '</span>');
+    $( "#largeCarTripFuel span" ).replaceWith('<span>' + largeCarTripFuel + '</span>');
+    $( "#motorHomeTripFuel span" ).replaceWith('<span>' + motorHomeTripFuel + '</span>');
 
 }
 
 document.getElementById('btnSearchTransportForm').addEventListener('click', calculateFuel);
+
+//calculate total rent fee for each type based on duration(days)
+const motorbikeRentFee = 109;
+const smallCarRentFee = 129;
+const largeCarRentFee = 144;
+const motorHomeRentFee = 200;
+
+function calculateTotalFee(){
+
+
+    motorbikeTotalFee = duration * motorbikeRentFee; //calculate total fee for each type 
+    smallCarTotalFee = duration * smallCarRentFee;
+    largeCarTotalFee = duration * largeCarRentFee;
+    motorHomeTotalFee = duration * motorHomeRentFee;
+
+    console.log('motorbikeTotalFee', motorbikeTotalFee);
+    console.log('smallCarTotalFee', smallCarTotalFee);
+    console.log('largeCarTotalFee', largeCarTotalFee);
+    console.log('motorHomeTripFuel', motorHomeTotalFee);
+
+
+    $( "#motorbikeTotalFee span" ).replaceWith('<span>' + motorbikeTotalFee + '</span>');//replace span in transport card to show total fee for particular duration
+    $( "#smallCarTotalFee span" ).replaceWith('<span>' + smallCarTotalFee + '</span>');
+    $( "#largeCarTotalFee span" ).replaceWith('<span>' + largeCarTotalFee + '</span>');
+    $( "#motorHomeTotalFee span" ).replaceWith('<span>' + motorHomeTotalFee + '</span>');
+
+}
+
+document.getElementById('btnSearchTransportForm').addEventListener('click', calculateTotalFee);
