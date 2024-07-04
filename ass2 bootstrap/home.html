@@ -143,7 +143,7 @@
       </div>
       
       <div id="availableTransport" class="hidden" >
-        <div class="link" id="goBackToSearch">
+        <div class="link goBackToSearch">
           <a href="home.html" class="d-flex align-items-center">
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>go back to search</p></a>
@@ -301,10 +301,11 @@
       </div>
 
       <div id="confirmationForm" class="hidden">
-        <div class="link" id="goBackToSearch">
-          <a href="home.html" class="d-flex align-items-center">
+        <div class="link" id="goBackToAvailableTransport">
+          <div class="d-flex align-items-center">
             <img src="./assets/img/goBackArrow.png" alt="">
-            <p>go back to available transport</p></a>
+            <p>go back to available transport</p>
+          </div>
         </div>
         <form onsubmit="return validateConfirmationForm()">
 
@@ -338,7 +339,7 @@
         <h4>Thank you for your booking!</h4>
         <p>Confirmation was sent to your email.</p>
 
-        <div class="link" id="goBackToSearch">
+        <div class="link goBackToSearch" >
           <a href="home.html" class="d-flex align-items-center floatRight">
             <img src="./assets/img/goBackArrow.png" alt="">
             <p>make another booking</p></a>

@@ -240,7 +240,7 @@ document.getElementById('btnSearchTransportForm').addEventListener('click', calc
 
 //remove disable class when click a link
 $(document).ready(function() {
-    $('#goBackToSearch').on('click', function() {
+    $('.goBackToSearch').on('click', function() {
         $("#cardMotorbikeButton, #cardSmallCarButton, #cardLargeCarButton, #cardMotorHomeButton").removeClass("disabled");
     });
 
@@ -305,3 +305,10 @@ function calculateTotalFee(){
 }
 
 document.getElementById('btnSearchTransportForm').addEventListener('click', calculateTotalFee);
+
+
+//Hide cinfirmationForm and shows availableTransport again
+document.getElementById("goBackToAvailableTransport").onclick = function () {
+    document.getElementById("confirmationForm").classList.add("hidden");
+    document.getElementById("availableTransport").classList.remove("hidden");
+};

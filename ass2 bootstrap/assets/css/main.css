@@ -536,7 +536,7 @@ header img {
   height: 10px;
   margin-right: 9px;
 }
-.link a {
+.link a, .link p {
   color: #999999;
 }
 
