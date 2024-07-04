@@ -312,3 +312,37 @@ document.getElementById("goBackToAvailableTransport").onclick = function () {
     document.getElementById("confirmationForm").classList.add("hidden");
     document.getElementById("availableTransport").classList.remove("hidden");
 };
+
+// disable transport cards buttons based on transport type 
+function availabilityByType(){
+
+    var transportType = document.getElementById("transportType").value;
+  
+    transportType = parseInt(transportType);
+
+    if ( transportType === 1 ) {
+        document.getElementById("cardSmallCarButton").classList.add("disabled");
+        document.getElementById("cardLargeCarButton").classList.add("disabled");
+        document.getElementById("cardMotorHomeButton").classList.add("disabled");
+    }
+
+    if ( transportType === 2 ) {
+        document.getElementById("cardMotorbikeButton").classList.add("disabled");
+        document.getElementById("cardLargeCarButton").classList.add("disabled");
+        document.getElementById("cardMotorHomeButton").classList.add("disabled");
+    }
+
+    if ( transportType === 3 ) {
+        document.getElementById("cardMotorbikeButton").classList.add("disabled");
+        document.getElementById("cardSmallCarButton").classList.add("disabled");
+        document.getElementById("cardMotorHomeButton").classList.add("disabled");
+    }
+
+    if ( transportType === 4 ) {
+        document.getElementById("cardMotorbikeButton").classList.add("disabled");
+        document.getElementById("cardSmallCarButton").classList.add("disabled");
+        document.getElementById("cardLargeCarButton").classList.add("disabled");
+    }
+
+}
+document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByType);
