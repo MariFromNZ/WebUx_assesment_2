@@ -2,3 +2,14 @@ a {
     text-decoration: none;
 }
 
+//for link hover
+.bold{
+    font-weight:500;
+    letter-spacing: -0.25px;
+}
+
+.link {
+    p {
+        cursor: pointer;
+    }
+}

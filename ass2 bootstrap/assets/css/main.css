@@ -337,6 +337,15 @@ a {
   text-decoration: none;
 }
 
+.bold {
+  font-weight: 500;
+  letter-spacing: -0.25px;
+}
+
+.link p {
+  cursor: pointer;
+}
+
 body {
   font-size: 100%;
   font-family: "Open Sans";

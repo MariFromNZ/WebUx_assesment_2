@@ -1,6 +1,3 @@
-
-
-
 //Validation for searchTransportForm
 function validateForm() {
 
@@ -42,10 +39,9 @@ function validateForm() {
     return false;  //Prevent form submission to show modal first
 }
 
+//Validation for searchTransportForm
+function tripDistanceValidation(){
 
-
- 
-function tripDistanceValuation(){
     var tripDistance = document.getElementById("tripDistance").value.trim();
     var errors = [];
 
@@ -59,9 +55,7 @@ function tripDistanceValuation(){
    
     return false; 
 }
-document.getElementById('btnSearchTransportForm').addEventListener('click', tripDistanceValuation);
-
-
+document.getElementById('btnSearchTransportForm').addEventListener('click', tripDistanceValidation);
 
 //Hide searchTransportForm and shows availableTransport
 document.getElementById("modalOkButton").onclick = function () {
@@ -71,12 +65,6 @@ document.getElementById("modalOkButton").onclick = function () {
     document.getElementById("availableTransport").classList.remove("hidden");
 };
 
-//Hide availableTransportForm and shows confirmationForm
-// document.getElementById("cardSelectButton").onclick = function () {
-//     document.getElementById("availableTransport").classList.add("hidden");
-//     document.getElementById("confirmationForm").classList.remove("hidden");
-// };
-
 //Hide availableTransportForm and shows confirmationForm for all cards 
 $(document).ready(function() {
     $(".cardSelectButton").on("click", function() {
@@ -84,8 +72,6 @@ $(document).ready(function() {
         $("#confirmationForm").removeClass("hidden");
     });
 });
-
-
 
 //Validation for confirmationForm 
 function validateConfirmationForm() {
@@ -114,8 +100,6 @@ function validateConfirmationForm() {
 
     if (phoneNumber === "") {
         errors.push("- Phone number is required");
-    // } else if (!/^\d+$/.test(phoneNumber)) {//Check characters - only digits allowed 
-    //     errors.push("- Phone number should contain only digits.");
     
     } else if (!/^\+[\d\s\-()]+$/.test(phoneNumber)) {//Check format - "+" in the begining followed by numbers /^\d+$/  ^\\+[1-9]\\\\d{1,14}$
         errors.push("- Phone number should be in the format +6402041975383");
@@ -262,13 +246,7 @@ function calculateFuel(){
     largeCarTripFuel = (distance * largeCarFuelConsumption) / 100;
     motorHomeTripFuel = (distance * motorHomeFuelConsumption) / 100;
 
-    // console.log('motorbikeTripFuel', motorbikeTripFuel);
-    // console.log('smallCarTripFuel', smallCarTripFuel);
-    // console.log('largeCarTripFuel', largeCarTripFuel);
-    // console.log('motorHomeTripFuel', motorHomeTripFuel);
-
-
-    $( "#motorbikeTripFuel span" ).replaceWith('<span>' + motorbikeTripFuel + '</span>');//replace span in transport card to show ftrip fuel consumption
+    $( "#motorbikeTripFuel span" ).replaceWith('<span>' + motorbikeTripFuel + '</span>');//replace span in transport card to show trip fuel consumption
     $( "#smallCarTripFuel span" ).replaceWith('<span>' + smallCarTripFuel + '</span>');
     $( "#largeCarTripFuel span" ).replaceWith('<span>' + largeCarTripFuel + '</span>');
     $( "#motorHomeTripFuel span" ).replaceWith('<span>' + motorHomeTripFuel + '</span>');
@@ -284,7 +262,6 @@ const largeCarRentFee = 144;
 const motorHomeRentFee = 200;
 
 function calculateTotalFee(){
-
 
     motorbikeTotalFee = duration * motorbikeRentFee; //calculate total fee for each type 
     smallCarTotalFee = duration * smallCarRentFee;
@@ -306,8 +283,7 @@ function calculateTotalFee(){
 
 document.getElementById('btnSearchTransportForm').addEventListener('click', calculateTotalFee);
 
-
-//Hide cinfirmationForm and shows availableTransport again
+//Hide confirmationForm and shows availableTransport again
 document.getElementById("goBackToAvailableTransport").onclick = function () {
     document.getElementById("confirmationForm").classList.add("hidden");
     document.getElementById("availableTransport").classList.remove("hidden");
@@ -317,7 +293,6 @@ document.getElementById("goBackToAvailableTransport").onclick = function () {
 function availabilityByType(){
 
     var transportType = document.getElementById("transportType").value;
-  
     transportType = parseInt(transportType);
 
     if ( transportType === 1 ) {
@@ -346,3 +321,28 @@ function availabilityByType(){
 
 }
 document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByType);
+
+
+
+//change lnik on hover
+// $(document).ready(function() {
+//   $(".link")
+//   .on( "mouseenter", function() {
+//     $(this).css({'color': 'red', 'font-size': '110%'});
+//   } )
+//   .on( "mouseleave", function() {
+//     $(this).css({'color': 'black', 'font-size': '100%'});
+//   });
+// });
+
+//change lnik on hover
+$(document).ready(function() {
+    $(".link")
+    .on("mouseenter", function() {
+        $(this).find('p').addClass('bold');
+      })
+    .on("mouseleave", function() {
+        $(this).find('p').removeClass('bold');
+  });
+});
+
