@@ -2,12 +2,10 @@
 function validateForm() {
 
     var theForm = document.querySelector("#searchTransportForm");
+    theForm.noValidate = true;// disable HTML5 validation
+    var errors = [];//create array for errors
 
-    theForm.noValidate = true;
-
-    var errors = [];
-
-    if (document.getElementById("pickUpLocation").value === "Select pick up location") {
+    if (document.getElementById("pickUpLocation").value === "Select pick up location") {//take value from input and check if user select any option
         errors.push("- Pick up location.");
     }
 
@@ -42,10 +40,10 @@ function validateForm() {
 //Validation for searchTransportForm
 function tripDistanceValidation(){
 
-    var tripDistance = document.getElementById("tripDistance").value.trim();
+    var tripDistance = document.getElementById("tripDistance").value.trim();//take value from input and remove any whitespace
     var errors = [];
 
-    if (tripDistance !== "" && !/^\d+$/.test(tripDistance)) {
+    if (tripDistance !== "" && !/^\d+$/.test(tripDistance)) {//check characters - only letters allowed
         errors.push("- Trip distance should contain only digits.");
     }
     if (errors.length > 0) {
@@ -57,7 +55,7 @@ function tripDistanceValidation(){
 }
 document.getElementById('btnSearchTransportForm').addEventListener('click', tripDistanceValidation);
 
-//Hide searchTransportForm and shows availableTransport
+//Hide searchTransportForm and shows availableTransport by adding  or removing class hidden
 document.getElementById("modalOkButton").onclick = function () {
     document.getElementById("exampleModal").classList.add("hidden");
     document.getElementById("searchTransportForm").classList.add("hidden");
@@ -65,7 +63,7 @@ document.getElementById("modalOkButton").onclick = function () {
     document.getElementById("availableTransport").classList.remove("hidden");
 };
 
-//Hide availableTransportForm and shows confirmationForm for all cards 
+//Hide availableTransportForm and shows confirmationForm for all card buttons 
 $(document).ready(function() {
     $(".cardSelectButton").on("click", function() {
         $("#availableTransport").addClass("hidden");
@@ -77,7 +75,7 @@ $(document).ready(function() {
 function validateConfirmationForm() {
 
     var theForm = document.querySelector("#confirmationForm"); 
-    theForm.noValidate = true;//to remove html5 validation - do I really need it?
+    theForm.noValidate = true;//disable HTML5 validation
 
     var errors = [];
 
@@ -88,20 +86,20 @@ function validateConfirmationForm() {
 
     if (firstName === "") {
         errors.push("- First name is required");
-    } else if (!/^[A-Za-z]+$/.test(firstName)) {//Check characters - only letters allowed
+    } else if (!/^[A-Za-z]+$/.test(firstName)) {//check characters - only letters allowed
         errors.push("- First name should contain only letters.");
     }
 
     if (lastName === "") {
         errors.push("- Last name is required");
-    } else if (!/^[A-Za-z]+$/.test(lastName)) {//Check characters - only letters allowed
+    } else if (!/^[A-Za-z]+$/.test(lastName)) {//check characters - only letters allowed
         errors.push("- Last name should contain only letters.");
     }
 
     if (phoneNumber === "") {
         errors.push("- Phone number is required");
     
-    } else if (!/^\+[\d\s\-()]+$/.test(phoneNumber)) {//Check format - "+" in the begining followed by numbers /^\d+$/  ^\\+[1-9]\\\\d{1,14}$
+    } else if (!/^\+[\d\s\-()]+$/.test(phoneNumber)) {//check format - "+" in the begining followed by numbers /^\d+$/  ^\\+[1-9]\\\\d{1,14}$
         errors.push("- Phone number should be in the format +6402041975383");
     }
 
@@ -146,7 +144,7 @@ $(document).ready(function () {
 
 
 //date picker library Flatpickr
-let startDate, endDate, duration;
+let startDate, endDate, duration;//need those to use later,so its outside the flatpickr
 
 flatpickr("#pickUpDate", {
     minDate: "today", // Disable previous days
@@ -174,14 +172,14 @@ flatpickr("#pickUpDate", {
       }
 });
 
-// disable transport cards buttons based on capacity 
+// Disable transport cards buttons based on capacity 
 function availabilityByCapasity(){
 
     var transportCapacity = document.getElementById("transportCapacity").value;
   
-    transportCapacity = parseInt(transportCapacity);
+    transportCapacity = parseInt(transportCapacity); //change from string to number
 
-    if ( transportCapacity > 1 ) {
+    if ( transportCapacity > 1 ) {//if capacity is not in trasport type range, transport card button will be disabled
         document.getElementById("cardMotorbikeButton").classList.add("disabled");
     }
 
@@ -198,12 +196,12 @@ function availabilityByCapasity(){
     }
 
 }
-document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByCapasity);
+document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByCapasity);//call function on btn click
 
-//calculate duration and disable transport cards buttons based on duration
+//Calculate duration and disable transport cards buttons based on duration
 function calculateDuration(){
 
-    if ( duration > 5 ) {
+    if ( duration > 5 ) {//if duration is not in trasport type range, transport card button will be disabled
         document.getElementById("cardMotorbikeButton").classList.add("disabled");
     }
 
@@ -220,18 +218,16 @@ function calculateDuration(){
     }
 }
 
-document.getElementById('btnSearchTransportForm').addEventListener('click', calculateDuration);
+document.getElementById('btnSearchTransportForm').addEventListener('click', calculateDuration);//call function on btn click
 
-//remove disable class when click a link
+//Remove disable class when click link class to reset card buttons to initial state (active)
 $(document).ready(function() {
     $('.goBackToSearch').on('click', function() {
         $("#cardMotorbikeButton, #cardSmallCarButton, #cardLargeCarButton, #cardMotorHomeButton").removeClass("disabled");
     });
-
-    console.log('ALL RESET')
 });
 
-//calculate fuel consumption based on distance and transport type
+//Calculate fuel consumption based on distance and transport type
 const motorbikeFuelConsumption = 3.7;
 const smallCarFuelConsumption = 8.5;
 const largeCarFuelConsumption = 9.7;
@@ -239,7 +235,7 @@ const motorHomeFuelConsumption = 17;
 
 function calculateFuel(){
     var kmInput = document.getElementById("tripDistance").value.trim();//take value from input
-    distance = parseInt(kmInput,10);
+    distance = parseInt(kmInput); //change from string to number
 
     motorbikeTripFuel = (distance * motorbikeFuelConsumption) / 100; //calculate trip fuel for each type 
     smallCarTripFuel = (distance * smallCarFuelConsumption) / 100;
@@ -253,9 +249,9 @@ function calculateFuel(){
 
 }
 
-document.getElementById('btnSearchTransportForm').addEventListener('click', calculateFuel);
+document.getElementById('btnSearchTransportForm').addEventListener('click', calculateFuel);//call function on btn click
 
-//calculate total rent fee for each type based on duration(days)
+//Calculate total rent fee for each type based on duration(days)
 const motorbikeRentFee = 109;
 const smallCarRentFee = 129;
 const largeCarRentFee = 144;
@@ -268,32 +264,26 @@ function calculateTotalFee(){
     largeCarTotalFee = duration * largeCarRentFee;
     motorHomeTotalFee = duration * motorHomeRentFee;
 
-    console.log('motorbikeTotalFee', motorbikeTotalFee);
-    console.log('smallCarTotalFee', smallCarTotalFee);
-    console.log('largeCarTotalFee', largeCarTotalFee);
-    console.log('motorHomeTripFuel', motorHomeTotalFee);
-
-
-    $( "#motorbikeTotalFee span" ).replaceWith('<span>' + motorbikeTotalFee + '</span>');//replace span in transport card to show total fee for particular duration
+    $( "#motorbikeTotalFee span" ).replaceWith('<span>' + motorbikeTotalFee + '</span>');//replace span in transport card to show total rent fee 
     $( "#smallCarTotalFee span" ).replaceWith('<span>' + smallCarTotalFee + '</span>');
     $( "#largeCarTotalFee span" ).replaceWith('<span>' + largeCarTotalFee + '</span>');
     $( "#motorHomeTotalFee span" ).replaceWith('<span>' + motorHomeTotalFee + '</span>');
 
 }
 
-document.getElementById('btnSearchTransportForm').addEventListener('click', calculateTotalFee);
+document.getElementById('btnSearchTransportForm').addEventListener('click', calculateTotalFee);//call function on btn click
 
-//Hide confirmationForm and shows availableTransport again
+//Hide confirmationForm and shows availableTransport when user come back from confirmation form
 document.getElementById("goBackToAvailableTransport").onclick = function () {
     document.getElementById("confirmationForm").classList.add("hidden");
     document.getElementById("availableTransport").classList.remove("hidden");
 };
 
-// disable transport cards buttons based on transport type 
+//Disable transport cards buttons based on transport type 
 function availabilityByType(){
 
     var transportType = document.getElementById("transportType").value;
-    transportType = parseInt(transportType);
+    transportType = parseInt(transportType);//change from string to number
 
     if ( transportType === 1 ) {
         document.getElementById("cardSmallCarButton").classList.add("disabled");
@@ -320,22 +310,9 @@ function availabilityByType(){
     }
 
 }
-document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByType);
+document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByType);//call function on btn click
 
-
-
-//change lnik on hover
-// $(document).ready(function() {
-//   $(".link")
-//   .on( "mouseenter", function() {
-//     $(this).css({'color': 'red', 'font-size': '110%'});
-//   } )
-//   .on( "mouseleave", function() {
-//     $(this).css({'color': 'black', 'font-size': '100%'});
-//   });
-// });
-
-//change lnik on hover
+//Chahge p in link on hover 
 $(document).ready(function() {
     $(".link")
     .on("mouseenter", function() {
