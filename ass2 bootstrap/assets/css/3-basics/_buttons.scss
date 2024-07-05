@@ -1,15 +1,15 @@
-
-
 .custom-btn {
     background-color: $bgBtnGreen ;
     color: #fff;
     width: 100%;
 }
+
 .modal{
     .custom-btn {
         width: 73px;
     }
 } 
+
 .card {
     .custom-btn {
         background-color: #fff;
@@ -20,6 +20,7 @@
         font-weight: 600;
     }
 }
+
 #confirmationForm {
     .custom-btn{
         margin-top: 40px;

@@ -1,6 +1,5 @@
 //Validation for searchTransportForm
 function validateForm() {
-
     var theForm = document.querySelector("#searchTransportForm");
     theForm.noValidate = true;// disable HTML5 validation
     var errors = [];//create array for errors
@@ -32,15 +31,13 @@ function validateForm() {
         return false;  //Prevent form submission
     }
 
-    // document.getElementById("exampleModal").classList.remove("hidden");//Shows modal
-    $("#exampleModal").removeClass("hidden");
+    $("#exampleModal").removeClass("hidden");//Shows modal by remove class hidden
 
     return false;  //Prevent form submission to show modal first
 }
 
 //Validation for searchTransportForm
-function tripDistanceValidation(){
-
+function tripDistanceValidation() {
     var tripDistance = document.getElementById("tripDistance").value.trim();//take value from input and remove any whitespace
     var errors = [];
 
@@ -58,11 +55,6 @@ document.getElementById('btnSearchTransportForm').addEventListener('click', trip
 
 //Hide searchTransportForm and shows availableTransport by adding  or removing class hidden
 document.getElementById("modalOkButton").onclick = function () {
-    // document.getElementById("exampleModal").classList.add("hidden");
-    // document.getElementById("searchTransportForm").classList.add("hidden");
-    // document.getElementById("h1Title").classList.add("hidden");
-    // document.getElementById("availableTransport").classList.remove("hidden");
-
     $("#exampleModal, #searchTransportForm, #h1Title").addClass("hidden");
     $("#availableTransport").removeClass("hidden");
 };
@@ -77,16 +69,10 @@ $(document).ready(function() {
 
 //Validation for confirmationForm 
 function validateConfirmationForm() {
-
     var theForm = document.querySelector("#confirmationForm"); 
     theForm.noValidate = true;//disable HTML5 validation
 
     var errors = [];
-
-    // var firstName = document.getElementById("inputFirstName").value.trim();
-    // var lastName = document.getElementById("inputLastName").value.trim();
-    // var phoneNumber = document.getElementById("inputPhone").value.trim();
-    // var emailAddress = document.getElementById("inputEmail").value.trim();
 
     var firstName = $.trim($("#inputFirstName").val());//take value from input and remove whitespace
     var lastName = $.trim($("#inputLastName").val());
@@ -108,14 +94,12 @@ function validateConfirmationForm() {
 
     if (phoneNumber === "") {
         errors.push("- Phone number is required");
-    
     } else if (!/^\+[\d\s\-()]+$/.test(phoneNumber)) {//check format - "+" in the begining followed by numbers /^\d+$/  ^\\+[1-9]\\\\d{1,14}$
         errors.push("- Phone number should be in the format +6402041975383");
     }
 
     if (emailAddress === "") {
         errors.push("- Email address is required.");
-        
     } else if (!/^([a-z0-9_.\-+]+)@([\da-z.-]+)(\.([a-z]{2,}))+$/.test(emailAddress)) {//Validate email format
         errors.push("- Invalid email address.");
     }
@@ -126,15 +110,10 @@ function validateConfirmationForm() {
         return false;  
     }
 
-    // document.getElementById("confirmationForm").classList.add("hidden");
-    // document.getElementById("confirmationMessage").classList.remove("hidden");
-
     $("#confirmationForm").addClass("hidden");
     $("#confirmationMessage").removeClass("hidden");
     return false;
 }
-
-
 
 //remove classes for responsive design based on screen size
 $(document).ready(function () {
@@ -154,7 +133,6 @@ $(document).ready(function () {
         screenSizeResponsive(); // Start function again for resize
     });
 });
-
 
 //date picker library Flatpickr
 let startDate, endDate, duration;//need those to use later,so its outside the flatpickr
@@ -186,51 +164,44 @@ flatpickr("#pickUpDate", {
 });
 
 // Disable transport cards buttons based on capacity 
-function availabilityByCapacity(){
-
-    // var transportCapacity = document.getElementById("transportCapacity").value;
-    // transportCapacity = parseInt(transportCapacity); //change from string to number
-
+function availabilityByCapacity() {
     var transportCapacity = parseInt($("#transportCapacity").val());//take value from input and change from string to number
 
     if ( transportCapacity > 1 ) {//check capacity, if its not in trasport type range, transport card button will be disabled
-        document.getElementById("cardMotorbikeButton").classList.add("disabled");//add bootstrap class disable
-        
+        $("#cardMotorbikeButton").addClass("disabled");//add bootstrap class disable
     }
 
     if ( transportCapacity > 2 ) {
-        document.getElementById("cardSmallCarButton").classList.add("disabled");
+        $("#cardSmallCarButton").addClass("disabled");
     }
 
     if ( transportCapacity > 5) {
-        document.getElementById("cardLargeCarButton").classList.add("disabled");
+        $("#cardLargeCarButton").addClass("disabled");
     }
 
     if ( transportCapacity < 2 || transportCapacity > 6) {
-        document.getElementById("cardMotorHomeButton").classList.add("disabled");
+        $("#cardMotorHomeButton").addClass("disabled");
     }
-
 }
 document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByCapacity);//call function on btn click
 
 //Calculate duration and disable transport cards buttons based on duration
-function calculateDuration(){
+function calculateDuration() {
 
     if ( duration > 5 ) {//if duration is not in trasport type range, transport card button will be disabled
-        document.getElementById("cardMotorbikeButton").classList.add("disabled");
+        $("#cardMotorbikeButton").addClass("disabled");
     }
 
     if ( duration > 10) {
-        document.getElementById("cardSmallCarButton").classList.add("disabled");
+        $("#cardSmallCarButton").addClass("disabled");
     }
 
     if ( duration < 3 || duration > 10 ) {
-        document.getElementById("cardLargeCarButton").classList.add("disabled");
+        $("#cardLargeCarButton").addClass("disabled");
     }
 
     if ( duration < 2 || duration > 15 ) {
-        document.getElementById("cardMotorHomeButton").classList.add("disabled");
-        
+        $("#cardMotorHomeButton").addClass("disabled");
     }
 }
 
@@ -244,109 +215,84 @@ $(document).ready(function() {
 });
 
 //Calculate fuel consumption based on distance and transport type
-const motorbikeFuelConsumption = 3.7;
-const smallCarFuelConsumption = 8.5;
-const largeCarFuelConsumption = 9.7;
-const motorHomeFuelConsumption = 17;
+const MOTORBIKEFUELCONSUMPTION = 3.7;
+const SMALLCARFUELCONSUMPTION = 8.5;
+const LARGECARFUELCONSUMPTION = 9.7;
+const MOTORHOMEFUELCONSUMPTION = 17;
 
 function calculateFuel(){
-    // var kmInput = document.getElementById("tripDistance").value.trim();//take value from input
-    // distance = parseInt(kmInput); //change from string to number
 
     var distance = parseInt($.trim($("#tripDistance").val()));//take value from input and change from string to number
 
-    motorbikeTripFuel = (distance * motorbikeFuelConsumption) / 100; //calculate trip fuel for each type 
-    smallCarTripFuel = (distance * smallCarFuelConsumption) / 100;
-    largeCarTripFuel = (distance * largeCarFuelConsumption) / 100;
-    motorHomeTripFuel = (distance * motorHomeFuelConsumption) / 100;
+    var motorbikeTripFuel = (distance * MOTORBIKEFUELCONSUMPTION) / 100; //calculate trip fuel for each type 
+    var smallCarTripFuel = (distance * SMALLCARFUELCONSUMPTION) / 100;
+    var largeCarTripFuel = (distance * LARGECARFUELCONSUMPTION) / 100;
+    var motorHomeTripFuel = (distance * MOTORHOMEFUELCONSUMPTION) / 100;
 
     $( "#motorbikeTripFuel span" ).replaceWith('<span>' + motorbikeTripFuel + '</span>');//replace span in transport card to show trip fuel consumption
     $( "#smallCarTripFuel span" ).replaceWith('<span>' + smallCarTripFuel + '</span>');
     $( "#largeCarTripFuel span" ).replaceWith('<span>' + largeCarTripFuel + '</span>');
     $( "#motorHomeTripFuel span" ).replaceWith('<span>' + motorHomeTripFuel + '</span>');
-
 }
 
 document.getElementById('btnSearchTransportForm').addEventListener('click', calculateFuel);//call function on btn click
 
 //Calculate total rent fee for each type based on duration(days)
-const motorbikeRentFee = 109;
-const smallCarRentFee = 129;
-const largeCarRentFee = 144;
-const motorHomeRentFee = 200;
+const MOTORBIKERENTFEE = 109;
+const SMALLCARRENTFEE = 129;
+const LARGECARRENTFEE = 144;
+const MOTORHOMERENTFEE = 200;
 
 function calculateTotalFee(){
 
-    motorbikeTotalFee = duration * motorbikeRentFee; //calculate total fee for each type 
-    smallCarTotalFee = duration * smallCarRentFee;
-    largeCarTotalFee = duration * largeCarRentFee;
-    motorHomeTotalFee = duration * motorHomeRentFee;
+    var motorbikeTotalFee = duration * MOTORBIKERENTFEE; //calculate total fee for each type 
+    var smallCarTotalFee = duration * SMALLCARRENTFEE;
+    var largeCarTotalFee = duration * LARGECARRENTFEE;
+    var motorHomeTotalFee = duration * MOTORHOMERENTFEE;
 
     $( "#motorbikeTotalFee span" ).replaceWith('<span>' + motorbikeTotalFee + '</span>');//replace span in transport card to show total rent fee 
     $( "#smallCarTotalFee span" ).replaceWith('<span>' + smallCarTotalFee + '</span>');
     $( "#largeCarTotalFee span" ).replaceWith('<span>' + largeCarTotalFee + '</span>');
     $( "#motorHomeTotalFee span" ).replaceWith('<span>' + motorHomeTotalFee + '</span>');
-
 }
 
 document.getElementById('btnSearchTransportForm').addEventListener('click', calculateTotalFee);//call function on btn click
 
 //Hide confirmationForm and shows availableTransport when user come back from confirmation form
 document.getElementById("goBackToAvailableTransport").onclick = function () {
-    // document.getElementById("confirmationForm").classList.add("hidden");//add class hidden (display: none)
-    // document.getElementById("availableTransport").classList.remove("hidden");//remove class hidden (display: none)
-
     $("#confirmationForm").addClass("hidden");
     $("#availableTransport").removeClass("hidden");
 };
 
 //Disable transport cards buttons based on transport type 
-function availabilityByType(){
-
-    // var transportType = document.getElementById("transportType").value;
-    // transportType = parseInt(transportType);//change from string to number
-
+function availabilityByType() {
     var transportType = parseInt($("#transportType").val()); //take value and change it to number
 
     if ( transportType === 1 ) { //check type; if not the same -  transport card button will be disabled
-        // document.getElementById("cardSmallCarButton").classList.add("disabled");
-        // document.getElementById("cardLargeCarButton").classList.add("disabled");
-        // document.getElementById("cardMotorHomeButton").classList.add("disabled");
         $("#cardSmallCarButton, #cardLargeCarButton, #cardMotorHomeButton").addClass("disabled");
     }
 
     if ( transportType === 2 ) {
-        // document.getElementById("cardMotorbikeButton").classList.add("disabled");
-        // document.getElementById("cardLargeCarButton").classList.add("disabled");
-        // document.getElementById("cardMotorHomeButton").classList.add("disabled");
         $("#cardMotorbikeButton, #cardLargeCarButton, #cardMotorHomeButton").addClass("disabled");
     }
 
     if ( transportType === 3 ) {
-        // document.getElementById("cardMotorbikeButton").classList.add("disabled");
-        // document.getElementById("cardSmallCarButton").classList.add("disabled");
-        // document.getElementById("cardMotorHomeButton").classList.add("disabled");
         $("#cardMotorbikeButton, #cardSmallCarButton, #cardMotorHomeButton").addClass("disabled");
     }
 
     if ( transportType === 4 ) {
-        // document.getElementById("cardMotorbikeButton").classList.add("disabled");
-        // document.getElementById("cardSmallCarButton").classList.add("disabled");
-        // document.getElementById("cardLargeCarButton").classList.add("disabled");
         $("#cardMotorbikeButton, #cardSmallCarButton, #cardLargeCarButton").addClass("disabled");
     }
-
 }
+
 document.getElementById('btnSearchTransportForm').addEventListener('click', availabilityByType);//call function on btn click
 
 //Chahge p in link on hover 
 $(document).ready(function() {
-    $(".link")
-    .on("mouseenter", function() {
+    $(".link").on("mouseenter", function() {
         $(this).find('p').addClass('bold');
-      })
-    .on("mouseleave", function() {
+    }).on("mouseleave", function() {
         $(this).find('p').removeClass('bold');
-  });
+    });
 });
 

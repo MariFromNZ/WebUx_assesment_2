@@ -1,28 +1,26 @@
 
 @import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
 
-@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sono:wght@200..800&display=swap';
-
-
 body {
     font-size: 100%;
     font-family:'Open Sans';
     h1, p {
         margin: 0;
     }
-  }
-  input, select {
+}
+
+input, select {
     font-family:'Open Sans';
-  }
+}
 
 #h1Title {
     h1 {
         font-weight: 600;
         text-transform:uppercase;
         color: white;
-        // font-size: 2.6em;
     }
 }
+
 .modal-content {
     border-radius: 6px;
     border:0;
@@ -31,6 +29,7 @@ body {
         padding-bottom:2% ;
     }
 }
+
 .modal-body {
     p {
         font-size: 0.875em;
@@ -43,6 +42,7 @@ body {
         padding:15px 0 10px;
     }
 }
+
 #searchTransportForm, #confirmationForm {
     input {
         font-size: 0.875em;
@@ -53,7 +53,6 @@ body {
         color: $textLightGrey;
     }
 }
-
 
 .card {
     p{
